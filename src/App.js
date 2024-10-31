@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Landing } from "./page/landing";
+import { Analytics } from "./page/analytics";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://34.29.1.39:8080/fetch");
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Landing data={data} />} />
+          <Route path="analytics" element={<Analytics />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
