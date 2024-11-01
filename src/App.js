@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Landing data={data} />} />
-          <Route path="analytics" element={<Analytics />} />
+          <Route path="analytics" element={<Analytics data={data} />} />
         </Route>
       </Routes>
     </BrowserRouter>
