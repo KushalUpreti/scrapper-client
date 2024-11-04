@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Landing } from "./page/landing";
-import { Analytics } from "./page/analytics";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AnalyticsV2 } from "./page/analyticsv2";

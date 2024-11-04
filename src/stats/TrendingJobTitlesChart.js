@@ -43,7 +43,13 @@ const TrendingJobTitlesChart = React.memo(({ jobData }) => {
     // Get the top 5 most frequent job titles
     const topTitles = Object.keys(titleCounts)
       .sort((a, b) => titleCounts[b] - titleCounts[a])
-      .slice(0, 5);
+      .slice(0, 5)
+      .filter((title) => {
+        if (title) {
+          return title;
+        }
+        return false;
+      });
 
     // Calculate daily trends for top job titles
     const dailyTitleTrends = {};

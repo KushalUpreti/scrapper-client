@@ -26,8 +26,10 @@ const TopCompaniesBarChart = React.memo(({ jobData }) => {
 
     // Count occurrences of each company in job postings
     jobData.forEach((job) => {
-      const company = job.company;
-      companyFrequency[company] = (companyFrequency[company] || 0) + 1;
+      if (job.company) {
+        const company = job.company;
+        companyFrequency[company] = (companyFrequency[company] || 0) + 1;
+      }
     });
 
     // Sort companies by frequency and take the top 10

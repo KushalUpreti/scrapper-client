@@ -59,7 +59,7 @@ export const AnalyticsV2 = ({ data }) => {
       <div class="p-4 sm:ml-64">
         <div class="grid grid-cols-3 gap-4 mb-4">
           <div class=" bg-gray-50 rounded-lg shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-            <div className="mx-auto flex max-w-xs flex-col gap-y-2 p-2">
+            <div className=" flex max-w-xs flex-col gap-y-2 py-2 px-4">
               <p className="text-base/7 text-gray-600">Jobs Scraped</p>
               <p className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 {totalJobs}
@@ -67,7 +67,7 @@ export const AnalyticsV2 = ({ data }) => {
             </div>
           </div>
           <div class="bg-gray-50 rounded-lg shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-            <div className="mx-auto flex max-w-xs flex-col gap-y-2 p-2">
+            <div className="flex max-w-xs flex-col gap-y-2 py-2 px-4">
               <p className="text-base/7 text-gray-600">
                 Companies with Job Postings
               </p>
@@ -77,7 +77,7 @@ export const AnalyticsV2 = ({ data }) => {
             </div>
           </div>
           <div class="bg-gray-50 rounded-lg shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-            <div className="mx-auto flex max-w-xs flex-col gap-y-2 p-2">
+            <div className="flex max-w-xs flex-col gap-y-2 py-2 px-4">
               <p className="text-base/7 text-gray-600">Locations around USA</p>
               <p className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 {locations}
