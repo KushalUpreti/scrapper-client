@@ -127,7 +127,7 @@ const LocationHeatMap = ({ jobData }) => {
     <MapContainer
       center={[37.8, -96]}
       zoom={4}
-      style={{ height: "500px", width: "50%" }}
+      style={{ height: "100%", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

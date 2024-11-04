@@ -56,7 +56,7 @@ const RemoteJobPieChart = React.memo(({ jobData }) => {
   };
 
   return (
-    <div className="chart-container" style={{ maxWidth: "300px" }}>
+    <div className="chart-container" style={{ maxWidth: "250px" }}>
       <Pie data={data} options={options} />
     </div>
   );

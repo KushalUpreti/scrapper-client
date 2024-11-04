@@ -26,10 +26,12 @@ const TopSkillsBarChart = React.memo(({ jobData }) => {
 
     // Count occurrences of each skill across all job postings
     jobData.forEach((job) => {
-      const skills = job.skills.replace("Skills: ", "").split(", ");
-      skills.forEach((skill) => {
-        skillFrequency[skill] = (skillFrequency[skill] || 0) + 1;
-      });
+      if (job.skills) {
+        const skills = job.skills.replace("Skills: ", "").split(", ");
+        skills.forEach((skill) => {
+          skillFrequency[skill] = (skillFrequency[skill] || 0) + 1;
+        });
+      }
     });
 
     // Sort skills by frequency and take the top 7
@@ -98,7 +100,7 @@ const TopSkillsBarChart = React.memo(({ jobData }) => {
   };
 
   return (
-    <div className="chart-container" style={{ maxWidth: "600px" }}>
+    <div className="chart-container" style={{ width: "95%" }}>
       <Bar data={data} options={options} />
     </div>
   );

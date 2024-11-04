@@ -89,7 +89,7 @@ const TrendingJobTitlesChart = React.memo(({ jobData }) => {
   };
 
   return (
-    <div className="chart-container" style={{ maxWidth: "600px" }}>
+    <div className="chart-container" style={{ width: "100%" }}>
       <Line data={{ labels, datasets }} options={options} />
     </div>
   );

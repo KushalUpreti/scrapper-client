@@ -53,10 +53,12 @@ const SkillTrendsChart = React.memo(({ jobData }) => {
 
     // Step 1: Count occurrences of each skill overall
     jobData.forEach((job) => {
-      const skills = job.skills.replace("Skills: ", "").split(", ");
-      skills.forEach((skill) => {
-        skillCounts[skill] = (skillCounts[skill] || 0) + 1;
-      });
+      if (job.skills) {
+        const skills = job.skills.replace("Skills: ", "").split(", ");
+        skills.forEach((skill) => {
+          skillCounts[skill] = (skillCounts[skill] || 0) + 1;
+        });
+      }
     });
 
     // Step 2: Get the top 7 skills
@@ -68,16 +70,18 @@ const SkillTrendsChart = React.memo(({ jobData }) => {
     Object.keys(groupedByDay).forEach((day) => {
       const jobsInDay = groupedByDay[day];
       jobsInDay.forEach((job) => {
-        const skills = job.skills.replace("Skills: ", "").split(", ");
-        skills.forEach((skill) => {
-          if (topSkills.includes(skill)) {
-            if (!dailySkillTrends[skill]) {
-              dailySkillTrends[skill] = {};
+        if (job.skills) {
+          const skills = job.skills.replace("Skills: ", "").split(", ");
+          skills.forEach((skill) => {
+            if (topSkills.includes(skill)) {
+              if (!dailySkillTrends[skill]) {
+                dailySkillTrends[skill] = {};
+              }
+              dailySkillTrends[skill][day] =
+                (dailySkillTrends[skill][day] || 0) + 1;
             }
-            dailySkillTrends[skill][day] =
-              (dailySkillTrends[skill][day] || 0) + 1;
-          }
-        });
+          });
+        }
       });
     });
 
@@ -118,7 +122,7 @@ const SkillTrendsChart = React.memo(({ jobData }) => {
 
   return (
     <>
-      <div style={{ maxWidth: "800px" }}>
+      <div style={{ width: "100%" }}>
         <Line data={{ labels, datasets }} options={options} />
       </div>
     </>

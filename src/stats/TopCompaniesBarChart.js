@@ -81,7 +81,7 @@ const TopCompaniesBarChart = React.memo(({ jobData }) => {
   };
 
   return (
-    <div className="chart-container" style={{ maxWidth: "600px" }}>
+    <div className="chart-container" style={{ width: "100%" }}>
       <Bar data={data} options={options} />
     </div>
   );
