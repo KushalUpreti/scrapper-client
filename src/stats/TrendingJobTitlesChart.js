@@ -70,7 +70,7 @@ const TrendingJobTitlesChart = React.memo(({ jobData }) => {
       data: labels.map((day) => dailyTitleTrends[title][day] || 0),
       fill: false,
       borderColor: `#${Math.floor(Math.random() * 16777215).toString(16)}`, // Random color for each line
-      tension: 0.1,
+      tension: 0.3,
     }));
 
     return { labels, datasets };
