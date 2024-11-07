@@ -4,6 +4,7 @@ import { Landing } from "./page/landing";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AnalyticsV2 } from "./page/analyticsv2";
+import { Jobs } from "./page/jobs";
 
 function App() {
   const [data, setData] = useState(null);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/">
           <Route index element={<Landing data={data} />} />
           <Route path="analytics" element={<AnalyticsV2 data={data} />} />
+          <Route path="jobs" element={<Jobs data={data} />} />
         </Route>
       </Routes>
     </BrowserRouter>

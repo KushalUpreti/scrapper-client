@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import _ from "lodash";
+import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 
 export const Landing = ({ data }) => {
@@ -141,7 +142,7 @@ export const Landing = ({ data }) => {
                     >
                       <dt className="text-base/7 text-gray-600">{stat.name}</dt>
                       <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                        {stat.value}
+                        <CountUp end={stat.value} duration={1.5} />
                       </dd>
                     </div>
                   ))}
