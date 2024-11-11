@@ -1,0 +1,59 @@
+[
+  {
+    "website": "Glassdoor",
+    "url": "https://www.glassdoor.com/Job/united-states-java-developer-jobs-SRCH_IL.0,13_IN1_KO14,28.htm?fromAge=1",
+    "jobList": ".JobsList_jobsList__lqjTr",
+    "selectors": [
+      {
+        "value": "title",
+        "selector": ".JobCard_jobTitle___7I6y",
+        "property": "innerText"
+      },
+      {
+        "value": "company",
+        "selector": ".EmployerProfile_compactEmployerName__LE242",
+        "property": "innerText"
+      },
+      {
+        "value": "location",
+        "selector": ".JobCard_location__rCz3x",
+        "property": "innerText"
+      },
+      {
+        "value": "url",
+        "selector": ".JobCard_jobTitle___7I6y",
+        "property": "href"
+      },
+      {
+        "value": "skills",
+        "selector": ".JobCard_jobDescriptionSnippet__yWW8q div:nth-child(2)",
+        "property": "innerText"
+      }
+    ],
+    "actions": null
+  },
+  {
+    "website": "Indeed",
+    "url": "https://www.indeed.com/jobs?q=java&l=United+States&radius=50&fromage=1&vjk=859001ac17f80ea9",
+    "jobList": ".css-1faftfv, eu4oa1w0",
+    "selectors": [
+      {
+        "value": "title",
+        "selector": ".jobTitle, css-1psdjh5",
+        "property": "innerText"
+      },
+      {
+        "value": "company",
+        "selector": ".css-1h7lukg.eu4oa1w0",
+        "property": "innerText"
+      },
+      {
+        "value": "location",
+        "selector": ".css-1restlb.eu4oa1w0",
+        "property": "innerText"
+      },
+      { "value": "url", "selector": ".jobTitle > a", "property": "href" }
+    ],
+    "actions": null
+  }
+]

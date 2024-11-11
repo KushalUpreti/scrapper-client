@@ -1,0 +1,18 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "Scrape test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kushal Upreti",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^7.13.0",
+    "express": "^4.21.1",
+    "puppeteer": "^23.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
